@@ -20,7 +20,7 @@
 
   &#xa0;
 
-  <!-- <a href="https://desafiotecredi.netlify.app/">Visualizar site</a> -->
+ <a href="https://desafiotecredi.netlify.app/">Visualizar site</a> 
 </div>
 
 
