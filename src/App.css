@@ -1,0 +1,26 @@
+
+a {
+  font-weight: 700;
+  cursor: pointer;
+}
+.logo-tecredi {
+  width: 180px;
+  margin-left: 8rem;
+
+}
+.nav {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5rem!important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+}
+
+.car-tecredi {
+  margin-left: 2rem;
+}
