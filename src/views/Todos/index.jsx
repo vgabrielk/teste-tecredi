@@ -45,7 +45,8 @@ const Todos = () => {
         }
     ]
 
-    const fetchData = async () => {
+    const fetchData = async (e) => {
+        e.preventDefault()
         dispatch(getList(
             () => { },
             (error) => { console.log(error) }
@@ -281,26 +282,26 @@ const Todos = () => {
                                         <CardBody className='card-relative'  >
                                             <p className='pr-5'>{todo.title}</p>
                                             <div className='d-flex justify-content-between'>
-                                                    <Button className="bg-transparent border-0 p-1"
-                                                        onClick={() => {
-                                                            removeTask(todo)
-                                                        }}
-                                                    >
-                                                        <FaTrash size={20} className='text-light' />
-                                                    </Button>
-                                                    <Button className='bg-transparent border-0 p-1'
-                                                        onClick={() => {
-                                                            dispatch({
-                                                                type: 'TODO_FETCH',
-                                                                payload: todo
-                                                            })
-                                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                <Button className="bg-transparent border-0 p-1"
+                                                    onClick={() => {
+                                                        removeTask(todo)
+                                                    }}
+                                                >
+                                                    <FaTrash size={20} className='text-light' />
+                                                </Button>
+                                                <Button className='bg-transparent border-0 p-1'
+                                                    onClick={() => {
+                                                        dispatch({
+                                                            type: 'TODO_FETCH',
+                                                            payload: todo
+                                                        })
+                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
 
-                                                        }}
-                                                    >
-                                                        <BsPencilFill />
-                                                    </Button>
-                                                </div>
+                                                    }}
+                                                >
+                                                    <BsPencilFill />
+                                                </Button>
+                                            </div>
                                         </CardBody>
                                     </Card>
                                 </Col>
@@ -314,26 +315,26 @@ const Todos = () => {
                                         <CardBody className='card-relative'  >
                                             <p className='pr-5'>{todo.title}</p>
                                             <div className='d-flex justify-content-between'>
-                                                    <Button className="bg-transparent border-0 p-1"
-                                                        onClick={() => {
-                                                            removeTask(todo)
-                                                        }}
-                                                    >
-                                                        <FaTrash size={20} className='text-light' />
-                                                    </Button>
-                                                    <Button className='bg-transparent border-0 p-1'
-                                                        onClick={() => {
-                                                            dispatch({
-                                                                type: 'TODO_FETCH',
-                                                                payload: todo
-                                                            })
-                                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                <Button className="bg-transparent border-0 p-1"
+                                                    onClick={() => {
+                                                        removeTask(todo)
+                                                    }}
+                                                >
+                                                    <FaTrash size={20} className='text-light' />
+                                                </Button>
+                                                <Button className='bg-transparent border-0 p-1'
+                                                    onClick={() => {
+                                                        dispatch({
+                                                            type: 'TODO_FETCH',
+                                                            payload: todo
+                                                        })
+                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
 
-                                                        }}
-                                                    >
-                                                        <BsPencilFill />
-                                                    </Button>
-                                                </div>
+                                                    }}
+                                                >
+                                                    <BsPencilFill />
+                                                </Button>
+                                            </div>
                                         </CardBody>
                                     </Card>
                                 </Col>
