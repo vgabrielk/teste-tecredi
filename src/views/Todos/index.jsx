@@ -45,8 +45,7 @@ const Todos = () => {
         }
     ]
 
-    const fetchData = async (e) => {
-        e.preventDefault()
+    const fetchData = async () => {
         dispatch(getList(
             () => { },
             (error) => { console.log(error) }
