@@ -2,4 +2,7 @@
     .logo-tecredi {
         display: none;
     }
+    .main-card{
+        margin-top: 20vh!important;
+      }
 }
