@@ -23,6 +23,8 @@ const Users = () => {
 	const [company, setCompany] = useState("")
 	const [street_add, setStreet] = useState("")
 
+	const [errorsForm, setErrorsForm] = useState(false)
+
 	const users = useSelector(state => state.users.users)
 	const user = useSelector(state => state.users.user)
 	const dispatch = useDispatch()
@@ -68,6 +70,7 @@ const Users = () => {
 			setTimeout(() => {
 				setToastError(false)
 			}, 2500)
+			setErrorsForm(true)
 		}
 		else {
 			const allData = [...users, data]
@@ -80,6 +83,8 @@ const Users = () => {
 			setTimeout(() => {
 				setToastSuccess(false)
 			}, 2500)
+
+			
 		}
 	}
 
@@ -171,7 +176,7 @@ const Users = () => {
 						<Modal isOpen={modal} toogle={modalUsers} >
 							<ModalHeader>
 								{!user ? "Register user" : "Edit user"}
-								<p style={{ fontSize: '.8rem' }}>Obrigatory input*</p>
+								<p style={{ fontSize: '.8rem' }}>Required input*</p>
 							</ModalHeader>
 							<ModalBody>
 								<Row>
@@ -183,6 +188,7 @@ const Users = () => {
 											onChange={(e) => { setName(e.target.value) }}
 											value={name}
 										/>
+										{name === "" && errorsForm === true ? <p className='text-danger' style={{fontSize: '.7rem'}}>Name is required</p> : null}
 									</Col>
 									<Col sm="6">
 										<Label>User Name*</Label>
@@ -192,6 +198,7 @@ const Users = () => {
 											onChange={(e) => { setUserName(e.target.value) }}
 											value={username}
 										/>
+										{username === "" && errorsForm === true ? <p className='text-danger' style={{fontSize: '.7rem'}}>Username is required</p> : null}
 									</Col>
 									<Col sm="4">
 										<Label>Email*</Label>
@@ -201,6 +208,7 @@ const Users = () => {
 											onChange={(e) => { setEmail(e.target.value) }}
 											value={email}
 										/>
+										{email === "" && errorsForm === true ? <p className='text-danger' style={{fontSize: '.7rem'}}>Email is required</p> : null}
 									</Col>
 									<Col sm="8">
 										<Label>Street name*</Label>
@@ -210,6 +218,7 @@ const Users = () => {
 											onChange={(e) => { setStreet(e.target.value) }}
 											value={street_add}
 										/>
+										{street_add === "" && errorsForm === true ? <p className='text-danger' style={{fontSize: '.7rem'}}>Name is required</p> : null}
 									</Col>
 									<Col sm="12">
 										<Label>Phone*</Label>
@@ -221,6 +230,7 @@ const Users = () => {
 											type='text'
 											placeholder='Type your phone number'
 										/>
+										{phone_number === "" && errorsForm === true ? <p className='text-danger' style={{fontSize: '.7rem'}}>Phone is required</p> : null}
 									</Col>
 									<Col sm="6">
 										<Label>Website</Label>
@@ -253,6 +263,7 @@ const Users = () => {
 								<Button
 									onClick={() => {
 										modalUsers()
+										setErrorsForm(false)
 										{ !user ? null : switchData() }
 									}}
 									color='secondary'>Cancel</Button>

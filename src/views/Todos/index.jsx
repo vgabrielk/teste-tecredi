@@ -8,6 +8,7 @@ import { FaTrash } from 'react-icons/fa'
 import { GoTasklist } from 'react-icons/go'
 import { MdDone, MdError } from 'react-icons/md'
 import { BsPencilFill } from 'react-icons/bs'
+import { BiRefresh } from 'react-icons/bi'
 import './style.css'
 
 const Todos = () => {
@@ -161,9 +162,24 @@ const Todos = () => {
             ) :
                 null
             }
+
             <Card className='main-card'>
                 <Container>
                     <CardBody>
+                        <div className='mb-1'>
+                            <Button color='primary'
+                                onClick={() => {
+                                    dispatch({
+                                        type: 'TODO_FETCH',
+                                        payload: null
+                                    })
+                                    switchData()
+                                }}
+                            >
+                                Refresh
+                                <BiRefresh />
+                            </Button>
+                        </div>
                         <Row>
                             <Col sm="4" className='mb-1'>
                                 <InputGroup >
@@ -194,10 +210,12 @@ const Todos = () => {
                             </Col>
                             <Col className='d-flex justify-content-end' sm="4">
                                 <Button
+                                    color='primary'
                                     onClick={() => {
                                         !todo ? createTask() : updateTask()
                                     }}
-                                >Submit</Button>
+                                >Submit
+                                </Button>
                             </Col>
                         </Row>
                     </CardBody>
