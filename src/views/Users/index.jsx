@@ -84,7 +84,7 @@ const Users = () => {
 				setToastSuccess(false)
 			}, 2500)
 
-			
+
 		}
 	}
 
@@ -139,7 +139,7 @@ const Users = () => {
 						<MdDone className='text-success' size={40} />
 					</ToastHeader>
 					<ToastBody className='text-light fs-800'>
-						Sucesso
+						Success!
 					</ToastBody>
 				</Toast>
 			) :
@@ -151,7 +151,7 @@ const Users = () => {
 						<MdError className='text-danger' size={40} />
 					</ToastHeader>
 					<ToastBody className='text-light fs-800'>
-						Ops! Algo errado aconteceu
+						An error has occurred!
 					</ToastBody>
 				</Toast>
 			) :
@@ -188,7 +188,7 @@ const Users = () => {
 											onChange={(e) => { setName(e.target.value) }}
 											value={name}
 										/>
-										{name === "" && errorsForm === true ? <p className='text-danger' style={{fontSize: '.7rem'}}>Name is required</p> : null}
+										{name === "" && errorsForm === true ? <p className='text-danger' style={{ fontSize: '.7rem' }}>Name is required</p> : null}
 									</Col>
 									<Col sm="6">
 										<Label>User Name*</Label>
@@ -198,7 +198,7 @@ const Users = () => {
 											onChange={(e) => { setUserName(e.target.value) }}
 											value={username}
 										/>
-										{username === "" && errorsForm === true ? <p className='text-danger' style={{fontSize: '.7rem'}}>Username is required</p> : null}
+										{username === "" && errorsForm === true ? <p className='text-danger' style={{ fontSize: '.7rem' }}>Username is required</p> : null}
 									</Col>
 									<Col sm="4">
 										<Label>Email*</Label>
@@ -208,7 +208,7 @@ const Users = () => {
 											onChange={(e) => { setEmail(e.target.value) }}
 											value={email}
 										/>
-										{email === "" && errorsForm === true ? <p className='text-danger' style={{fontSize: '.7rem'}}>Email is required</p> : null}
+										{email === "" && errorsForm === true ? <p className='text-danger' style={{ fontSize: '.7rem' }}>Email is required</p> : null}
 									</Col>
 									<Col sm="8">
 										<Label>Street name*</Label>
@@ -218,7 +218,7 @@ const Users = () => {
 											onChange={(e) => { setStreet(e.target.value) }}
 											value={street_add}
 										/>
-										{street_add === "" && errorsForm === true ? <p className='text-danger' style={{fontSize: '.7rem'}}>Name is required</p> : null}
+										{street_add === "" && errorsForm === true ? <p className='text-danger' style={{ fontSize: '.7rem' }}>Name is required</p> : null}
 									</Col>
 									<Col sm="12">
 										<Label>Phone*</Label>
@@ -230,7 +230,7 @@ const Users = () => {
 											type='text'
 											placeholder='Type your phone number'
 										/>
-										{phone_number === "" && errorsForm === true ? <p className='text-danger' style={{fontSize: '.7rem'}}>Phone is required</p> : null}
+										{phone_number === "" && errorsForm === true ? <p className='text-danger' style={{ fontSize: '.7rem' }}>Phone is required</p> : null}
 									</Col>
 									<Col sm="6">
 										<Label>Website</Label>

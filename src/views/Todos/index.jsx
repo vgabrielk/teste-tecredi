@@ -19,11 +19,12 @@ const Todos = () => {
     const todos = useSelector(state => state.todos.todos)
     const todo = useSelector(state => state.todos.todo)
     const users = useSelector(state => state.users.users)
+    const user = useSelector(state => state.users.user)
 
 
 
     const [title, setTitle] = useState("")
-    const [userTaskId, setUserTaskId] = useState("")
+    const [userTaskId, setUserTaskId] = useState({})
     const [filterInput, setFilterInput] = useState("")
     const [bgSuccess, setBgSuccess] = useState(null)
 
@@ -62,7 +63,7 @@ const Todos = () => {
 
     const switchData = async () => {
         !todo ? setTitle("") : setTitle(todo.title)
-        !todo ? setUserTaskId("") : setUserTaskId(todo.userId)
+        !todo ? setUserTaskId("") : setUserTaskId({value: todo.userId , label: 'Select a new user'})
     }
 
     const createTask = async () => {
@@ -144,7 +145,7 @@ const Todos = () => {
                         <MdDone className='text-success' size={40} />
                     </ToastHeader>
                     <ToastBody className='text-light fs-800'>
-                        Sucesso!
+                        Success!
                     </ToastBody>
                 </Toast>
             ) :
@@ -156,7 +157,7 @@ const Todos = () => {
                         <MdError className='text-danger' size={40} />
                     </ToastHeader>
                     <ToastBody className='text-light fs-800'>
-                        Ops! Algo errado aconteceu
+                    An error has occurred!
                     </ToastBody>
                 </Toast>
             ) :
@@ -176,7 +177,7 @@ const Todos = () => {
                                     switchData()
                                 }}
                             >
-                                Refresh
+                                Refresh to add new task
                                 <BiRefresh />
                             </Button>
                         </div>
