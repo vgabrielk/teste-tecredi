@@ -89,22 +89,23 @@ const Users = () => {
 	}
 
 	const updateUser = () => {
-		user.phone = phone_number,
-			user.company.name = company
-		user.address.street = street_add,
-			user.name = name,
-			user.username = username,
-			user.email = email,
-			user.website = website
-		setToastSuccess(true)
-		setTimeout(() => {
-			setToastSuccess(false)
-		}, 2500)
-		modalUsers()
-		dispatch(update(editData,
-			() => { },
-			() => { }
-		))
+		if (name === "" || username === "" || phone_number === "" || email === "" || street_add === "") {
+			setErrorsForm(true)
+		}
+		else {
+			user.phone = phone_number,
+				user.company.name = company
+			user.address.street = street_add,
+				user.name = name,
+				user.username = username,
+				user.email = email,
+				user.website = website
+			setToastSuccess(true)
+			setTimeout(() => {
+				setToastSuccess(false)
+			}, 2500)
+			modalUsers()
+		}
 	}
 	const removeUser = (user) => {
 		if (!confirm("do you really want to delete??")) {
@@ -117,10 +118,7 @@ const Users = () => {
 			type: 'USERS_FETCH',
 			payload: removed
 		})
-		dispatch(deleteUser(
-			() => { },
-			() => { }
-		))
+
 	}
 
 	useEffect(() => {
