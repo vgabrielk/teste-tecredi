@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getList } from './todosActions'
 import { getList as getUsers } from '../Users/userActions'
-import { Button, Card, CardBody, Col, Container, Input, InputGroup, InputGroupText, Row, Toast, ToastBody, ToastHeader } from 'reactstrap'
+import { Button, Card, CardBody, CardTitle, Col, Container, Input, InputGroup, InputGroupText, Row, Toast, ToastBody, ToastHeader } from 'reactstrap'
 import Select from 'react-select'
 import { FaTrash } from 'react-icons/fa'
 import { GoTasklist } from 'react-icons/go'
@@ -63,7 +63,7 @@ const Todos = () => {
 
     const switchData = async () => {
         !todo ? setTitle("") : setTitle(todo.title)
-        !todo ? setUserTaskId("") : setUserTaskId({value: todo.userId , label: 'Select a new user'})
+        !todo ? setUserTaskId("") : setUserTaskId({ value: todo.userId, label: 'Select a new user' })
     }
 
     const createTask = async () => {
@@ -157,7 +157,7 @@ const Todos = () => {
                         <MdError className='text-danger' size={40} />
                     </ToastHeader>
                     <ToastBody className='text-light fs-800'>
-                    An error has occurred!
+                        An error has occurred!
                     </ToastBody>
                 </Toast>
             ) :
@@ -167,6 +167,7 @@ const Todos = () => {
             <Card className='main-card'>
                 <Container>
                     <CardBody>
+                        <CardTitle>{!todo ? "Add a new task" : `Editing the task ${todo.title}`}</CardTitle>
                         <div className='mb-1'>
                             <Button color='primary'
                                 onClick={() => {
