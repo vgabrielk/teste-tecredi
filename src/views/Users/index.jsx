@@ -276,6 +276,7 @@ const Users = () => {
 							</InputGroup>
 
 						</div>
+							<p>Scroll to view the table...</p>
 						<div className='table-responsive'>
 							<Table className='table-md table-bordered text-center'>
 								<thead className='text-primary' >
